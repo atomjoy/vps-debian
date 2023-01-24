@@ -43,15 +43,6 @@ sudo bash ssl-hello.sh
 sudo bash vhost-hello.sh
 ```
 
-# Ssh login email
-
-Zmień parametry przed uruchomieniem.
-
-```sh
-# Email po logowaniu z ssh
-sudo bash ssh-login-alert.sh
-```
-
 ### Usuń użytkownika debian z sudo
 
 ```sh
