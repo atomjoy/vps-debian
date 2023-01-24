@@ -24,6 +24,12 @@ v=spf1 a mx ip4:1.2.3.4 include:mx.ovh.com -all
 hello.example.com
 ```
 
+### Zaloguj się jako root
+Uruchom wszystkie skrypty jako użytkownik root.
+```sh
+su root
+```
+
 ### Konfiguracja vps
 
 Zmień parametry przed uruchomieniem.

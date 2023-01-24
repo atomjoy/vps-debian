@@ -52,8 +52,10 @@ server {
     default_type "text/plain";
     try_files \$uri =404;
   }
-  # Redirect ssl
-  return 301 https://${TO_HOST}\$request_uri;
+  location / {
+    # Redirect ssl
+    return 301 https://${TO_HOST}\$request_uri;
+  }
 }
 " > "/etc/nginx/sites-enabled/${DOMAIN}.conf"
 
@@ -136,6 +138,7 @@ sudo mkdir -p "/var/www/${DOMAIN}$ROOT_DIR/.well-known/acme-challenge"
 # Add index page
 echo "Html Works ..." > "/var/www/${DOMAIN}$ROOT_DIR/index.html"
 echo "<?php echo 'Php Works ...';" > "/var/www/${DOMAIN}$ROOT_DIR/index.php"
+echo "Webroot certs ..." > "/var/www/${DOMAIN}$ROOT_DIR/.well-known/acme-challenge/index.html"
 
 if [ "$DISALLOW_ROBOTS" = true  ]; then
 echo "User-agent: *
