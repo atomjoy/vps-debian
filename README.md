@@ -7,18 +7,21 @@ sudo apt install git
 git clone https://github.com/atomjoy/vps-debian.git
 ```
 
-### Dodaj rekordy A do strefy DNS dla subdomeny/domeny
-
-Vps hostname: hello.example.com a revers dns: hello.example.com dla ip serwera. Uruchom skrypty z sudo lub jako root.
-
-```sh
-# Dla domeny
+### Dodaj rekordy A do strefy DNS dla subdomeny/domeny oraz rekord SPF dla ip serwera
+```
+# Rekord A dla domeny
 example.com
 www.example.com
 
-# Dla subdomen fqdn
+# Rekord A dla subdomeny fqdn
 hello.example.com
 www.hello.example.com
+
+# Rekord SPF TXT
+v=spf1 a mx ip4:1.2.3.4 include:mx.ovh.com -all
+
+# Vps IP revers dns
+hello.example.com
 ```
 
 ### Konfiguracja vps
