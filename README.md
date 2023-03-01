@@ -2,6 +2,13 @@
 
 Konfiguracja serwera VPS Debian 11 z ovh (de) LEMP, SMTP, SSH, UFW, FAIL2BAN.
 
+## Utwórz i dodaj klucz ssh
+Utwórz i dodaj w panelu ovh klucz ssh a następnei przeinstaluj server vps z kluczem ssh.
+```sh
+ssh-keygen -t ed25519
+```
+
+### Zaloguj sie do vps z ssh i pobierz repo
 ```sh
 sudo apt install git
 git clone https://github.com/atomjoy/vps-debian.git
